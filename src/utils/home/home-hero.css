@@ -1,0 +1,27 @@
+/* Left to right */
+.home_hero_shape .home_hero_pastille-right-to-left {
+  transition: margin-right 0.3s ease-out;
+}
+
+/* Left to right */
+.home_hero_shape .home_hero_pastille-left-to-right {
+  transition: margin-left 0.3s ease-out;
+}
+
+/* Left to right */
+.home_hero_shape.is-short .home_hero_pastille-right-to-left {
+  transition: margin-right 0.15s ease-out;
+}
+
+/* Left to right */
+.home_hero_shape.is-short .home_hero_pastille-left-to-right {
+  transition: margin-left 0.15s ease-out;
+}
+
+.home_hero_shape:hover .home_hero_pastille-left-to-right {
+  margin-left: calc(100% - 6rem);
+}
+
+.home_hero_shape:hover .home_hero_pastille-right-to-left {
+  margin-right: calc(100% - 6rem);
+}

@@ -1,0 +1,10 @@
+@media screen and (min-width: 991px) {
+  .home_services_collection-list {
+    padding-top: 4rem;
+  }
+
+  .home_services_collection-item:nth-child(3),
+  .home_services_collection-item:nth-child(4) {
+    transform: translateY(-4rem);
+  }
+}
