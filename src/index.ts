@@ -26,6 +26,13 @@ window.Webflow.push(() => {
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js'),
   ]);
 
+  // navbar
+  navbarHoverLink();
+  navbarHoverButton();
+  if (window.innerWidth > 991) {
+    navbarScrollHeight();
+  }
+
   // icons in component
   svgComponent();
 
@@ -35,13 +42,6 @@ window.Webflow.push(() => {
   // portfolio
   swiperPortfolio();
   portfolioCardToggle();
-
-  // navbar
-  navbarHoverLink();
-  navbarHoverButton();
-  if (window.innerWidth > 991) {
-    navbarScrollHeight();
-  }
 
   // sticky buttons
   stickyButton();
