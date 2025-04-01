@@ -24,4 +24,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# Environment variables
+.env.local
+# .env.*.local
+
 # Production files
