@@ -8,3 +8,21 @@
     transform: translateY(-4rem);
   }
 }
+
+.services_cards:hover .services_cards-heading-w,
+.services_cards:hover .services_cards-description-w,
+.services_cards:hover .services_cards-cover-w {
+  background-color: var(--_brand---background--brand);
+}
+
+.services_cards:hover .services_cards-heading {
+  background-color: var(--_brand---background--secondary);
+}
+
+.services_cards {
+  transition: transform 0.3s ease-in-out;
+}
+
+.services_cards:hover {
+  transform: translateY(-2rem);
+}

@@ -1,0 +1,41 @@
+@media screen and (min-width: 991px) {
+  .concept_experts_collection-list {
+    padding-top: 4rem;
+  }
+
+  .concept_experts_collection-item:nth-child(3n + 2),
+  .concept_experts_collection-item:last-child {
+    /* transform: translateY(-4rem); */
+    margin-top: -4rem;
+  }
+}
+
+.concept_experts_cards_card-button.is-active .concept_experts_cards_card-button-open {
+  display: flex;
+}
+
+.concept_experts_cards_card-button.is-active .concept_experts_cards_card-button-close {
+  display: flex;
+  opacity: 1;
+}
+
+.concept_experts_cards_card-button:hover .concept_experts_cards_card-button-close,
+.concept_experts_cards_card-button:hover .concept_experts_cards_card-button-open {
+  background-color: var(--_brand---background--brand);
+}
+
+.concept_experts_cards_card-content.is-active {
+  opacity: 1;
+  height: auto;
+  display: flex;
+}
+
+/* filter logic */
+
+.concept_experts_filter_button-all .concept_experts_filter_checkbox {
+  width: auto;
+}
+
+.concept_experts_filter_button-all.is-active .concept_experts_filter_checkbox {
+  width: var(--size--1rem);
+}

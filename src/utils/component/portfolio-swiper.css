@@ -1,0 +1,24 @@
+.swiper.is-portfolio {
+  overflow: visible;
+}
+
+.portfolio_cards_button.is-active .portfolio_cards_button-open {
+  display: none;
+}
+
+.portfolio_cards_button.is-active .portfolio_cards_button-close {
+  display: flex;
+  opacity: 1;
+}
+
+.portfolio_cards_button:hover .portfolio_cards_button-close,
+.portfolio_cards_button:hover .portfolio_cards_button-open {
+  background-color: var(--_brand---background--brand);
+}
+
+.portfolio_cards_content.is-active {
+  opacity: 0;
+  background-color: red;
+  padding: 0rem;
+  width: 0rem;
+}
