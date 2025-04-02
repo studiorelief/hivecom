@@ -22,6 +22,6 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-.env.local
+.env
 
 # Production files
