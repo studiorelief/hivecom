@@ -6,11 +6,9 @@ on:
       - master
       - main
 
-env:
-  GSAP_AUTH_TOKEN: ${{ secrets.GSAP_AUTH_TOKEN }}
-
 jobs:
   release:
     uses: finsweet/workflow-release/.github/workflows/release.yml@main
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GSAP_AUTH_TOKEN: ${{ secrets.GSAP_AUTH_TOKEN }}
