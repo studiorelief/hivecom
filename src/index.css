@@ -3,6 +3,7 @@
 @import './utils/component/portfolio-swiper.css';
 @import './utils/concept/concept-experts.css';
 @import './utils/component/video-control.css';
+@import './utils/component/navbar.css';
 
 /* Services - Anchor */
 .services_presentation_anchor_link:hover {

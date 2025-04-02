@@ -1,0 +1,7 @@
+.navbar_menu-button.w-nav-button.w--open .navbar_menu-icon-open {
+  display: none;
+}
+
+.navbar_menu-button.w-nav-button.w--open .navbar_menu-icon-close {
+  display: flex;
+}

@@ -9,6 +9,7 @@ import { textFollowLine } from '$utils/component/textLine';
 import { conceptExperts, expertsFilter } from '$utils/concept/conceptExperts';
 import { processLine } from '$utils/concept/process';
 import loadScript from '$utils/global/loadScript';
+import { initMarker } from '$utils/global/marker';
 import { svgComponent } from '$utils/global/tricks';
 import { initCapsuleAnimation } from '$utils/home/capsuleAnimation';
 
@@ -25,6 +26,9 @@ window.Webflow.push(() => {
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-inputactive@1/inputactive.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js'),
   ]);
+
+  // recettage
+  initMarker();
 
   // navbar
   navbarHoverLink();

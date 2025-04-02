@@ -3,6 +3,9 @@ name: CI
 on:
   pull_request:
 
+env:
+  GSAP_AUTH_TOKEN: ${{ secrets.GSAP_AUTH_TOKEN }}
+
 jobs:
   Lint:
     uses: finsweet/workflow-ci-lint/.github/workflows/lint.yml@main
