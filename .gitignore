@@ -23,6 +23,5 @@ typings/
 
 # dotenv environment variables file
 .env
-.npmrc
 
 # Production files
