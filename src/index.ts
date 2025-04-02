@@ -15,6 +15,7 @@ import { initCapsuleAnimation } from '$utils/home/capsuleAnimation';
 
 window.Webflow ||= [];
 window.Webflow.push(() => {
+  // scripts
   Promise.all([
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js'),
     loadScript('https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js'),
