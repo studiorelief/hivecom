@@ -54,6 +54,7 @@
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
     "@marker.io/browser": "^0.20.2",
+    "dotenv": "^16.4.7",
     "gsap": "npm:@gsap/shockingly@^3.12.7",
     "swiper": "^11.2.6"
   },
