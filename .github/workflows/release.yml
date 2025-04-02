@@ -6,11 +6,24 @@ on:
       - master
       - main
 
-env:
-  GSAP_AUTH_TOKEN: ${{ secrets.GSAP_AUTH_TOKEN }}
-
 jobs:
+  setup-gsap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure GSAP
+        run: |
+          echo "always-auth=true" > .npmrc
+          echo "//npm.greensock.com/:_authToken=${{ secrets.GSAP_AUTH_TOKEN }}" >> .npmrc
+          echo "@gsap:registry=https://npm.greensock.com" >> .npmrc
+      - name: Upload .npmrc
+        uses: actions/upload-artifact@v3
+        with:
+          name: npmrc
+          path: .npmrc
+
   release:
+    needs: setup-gsap
     uses: finsweet/workflow-release/.github/workflows/release.yml@main
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
