@@ -4,33 +4,9 @@ on:
   pull_request:
 
 jobs:
-  Setup:
-    runs-on: ubuntu-latest
-    env:
-      GSAP_AUTH_TOKEN: ${{ secrets.GSAP_AUTH_TOKEN }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
   Lint:
-    needs: Setup
     uses: finsweet/workflow-ci-lint/.github/workflows/lint.yml@main
 
   # Comment this job out if your project doesn't have any tests
   Tests:
-    needs: Setup
     uses: finsweet/workflow-ci-test/.github/workflows/test.yml@main
