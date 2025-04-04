@@ -3,10 +3,13 @@
     padding-top: 4rem;
   }
 
-  .concept_experts_collection-item:nth-child(3n + 2),
-  .concept_experts_collection-item:last-child {
+  .concept_experts_collection-item:nth-child(3n + 2) {
     /* transform: translateY(-4rem); */
     margin-top: -4rem;
+  }
+
+  .concept_experts_collection-item:last-child {
+    margin-top: 0rem;
   }
 }
 

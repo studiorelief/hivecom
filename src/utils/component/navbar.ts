@@ -144,18 +144,78 @@ export function navbarScrollHeight() {
     }
   };
 
-  // Add scroll event listener with throttling to improve performance
+  // For throttling scroll event
   let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+  let scrollListener: EventListener | null = null;
+  let resizeListener: EventListener | null = null;
 
-  // Initial check in case page loads already scrolled
-  handleScroll();
+  // Reset navbar to default state - removes any inline styles applied by GSAP
+  const resetNavbarStyles = () => {
+    if (navbarContainer) {
+      // Clear all inline styles that may have been applied
+      navbarContainer.removeAttribute('style');
+
+      const navbarLogo = document.querySelector('.navbar_logo-link');
+      const navbarComponent = document.querySelector('.navbar_component');
+
+      if (navbarLogo) {
+        navbarLogo.removeAttribute('style');
+      }
+
+      if (navbarComponent) {
+        navbarComponent.removeAttribute('style');
+      }
+    }
+  };
+
+  // Function to initialize or remove scroll listener based on screen width
+  const handleResize = () => {
+    if (window.innerWidth > 991) {
+      // Only add the scroll listener if it's not already added
+      if (!scrollListener) {
+        scrollListener = () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              handleScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        };
+
+        window.addEventListener('scroll', scrollListener);
+        // Initial check in case page loads already scrolled
+        handleScroll();
+      }
+    } else {
+      // Remove the scroll listener if screen width is <= 991px
+      if (scrollListener) {
+        window.removeEventListener('scroll', scrollListener);
+        scrollListener = null;
+
+        // Reset navbar styles completely for mobile
+        resetNavbarStyles();
+      } else {
+        // Make sure styles are reset even if the page loads directly on mobile
+        resetNavbarStyles();
+      }
+    }
+  };
+
+  // Add resize event listener
+  resizeListener = () => handleResize();
+  window.addEventListener('resize', resizeListener);
+
+  // Initial setup based on current screen width
+  handleResize();
+
+  // Return a cleanup function that can be called to remove listeners
+  return () => {
+    if (scrollListener) {
+      window.removeEventListener('scroll', scrollListener);
+    }
+    if (resizeListener) {
+      window.removeEventListener('resize', resizeListener);
+    }
+  };
 }

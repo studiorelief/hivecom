@@ -20,3 +20,7 @@
 .concept_experts_filter_button-checkbox.is-active-inputactive .concept_experts_filter_checkbox {
   width: var(--size--1rem);
 }
+
+.w-checkbox.f-checkbox-butn-field.is-active-inputactive .contact_form_multistep_icon-wrapper {
+  background-color: var(--_brand---background--secondary);
+}

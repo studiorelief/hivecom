@@ -1,3 +1,4 @@
+import { DotLottie } from '@lottiefiles/dotlottie-web';
 import gsap from 'gsap';
 import CustomEase from 'gsap/CustomEase';
 
@@ -10,7 +11,7 @@ export function preloaderHivecom() {
   const counter = {
     value: 0,
   };
-  const loaderDuration = 2.5;
+  const loaderDuration = 5;
 
   // Check for previous visits in this session
   if (sessionStorage.getItem('visited') !== null) {
@@ -30,6 +31,17 @@ export function preloaderHivecom() {
   }
 
   sessionStorage.setItem('visited', 'true');
+
+  // Initialize the Lottie animation
+  const lottieCanvas = document.querySelector('#dotlottie-canvas');
+  if (lottieCanvas) {
+    new DotLottie({
+      autoplay: true,
+      loop: true,
+      canvas: lottieCanvas as HTMLCanvasElement,
+      src: 'https://lottie.host/b9a6a533-09f9-4f12-8219-782f9c749603/qphYzkbz3K.json',
+    });
+  }
 
   // Helper functions
   const updateLoaderText = () => {
